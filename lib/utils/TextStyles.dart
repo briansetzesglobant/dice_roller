@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Constants.dart';
 
 abstract class TextStyles {
   static const TextStyle bottomNavigationBarText = TextStyle(
@@ -6,17 +7,17 @@ abstract class TextStyles {
     fontWeight: FontWeight.normal,
     height: 2.0,
   );
-  static const TextStyle bottomNavigationBarScore =  TextStyle(
-      fontSize: 25.0,
-      fontWeight: FontWeight.normal,
-      height: 2.0,
-    );
-  static const TextStyle bottomNavigationBarValue =TextStyle(
+  static const TextStyle bottomNavigationBarScore = TextStyle(
+    fontSize: 25.0,
+    fontWeight: FontWeight.normal,
+    height: 2.0,
+  );
+  static const TextStyle bottomNavigationBarValue = TextStyle(
     color: Color.fromRGBO(
-      189,
-      56,
-      27,
-      150.0,
+      Constants.TextStyle189,
+      Constants.TextStyle56,
+      Constants.TextStyle27,
+      Constants.TextStyle150_0,
     ),
     fontSize: 25.0,
     fontWeight: FontWeight.normal,

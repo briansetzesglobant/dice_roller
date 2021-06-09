@@ -19,13 +19,15 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+        ),
       ),
       backgroundColor: Color.fromARGB(
-        255,
-        0,
-        217,
-        255,
+        Constants.backgroundColor255,
+        Constants.backgroundColor0,
+        Constants.backgroundColor217,
+        Constants.backgroundColor255,
       ),
       body: GridView.count(
         crossAxisCount: Constants.bodyCrossAxisCount,
@@ -42,7 +44,6 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
                 borderRadius: BorderRadius.circular(
                   Constants.bodyBorderRadius,
                 ),
-                //color: Colors.green,
               ),
               child: Image(
                 image: AssetImage(
