@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'DiceRollerUI.dart';
+import 'dice_roller_ui.dart';
 
 void main() {
   runApp(MyApp());

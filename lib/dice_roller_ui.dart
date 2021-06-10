@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utils/Constants.dart';
-import 'utils/TextStyles.dart';
+import 'utils/text_styles.dart';
 
 class DiceRollerUI extends StatefulWidget {
   DiceRollerUI({
