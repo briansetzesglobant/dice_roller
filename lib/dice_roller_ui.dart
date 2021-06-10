@@ -24,10 +24,10 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
         ),
       ),
       backgroundColor: Color.fromARGB(
-        Constants.backgroundColor255,
-        Constants.backgroundColor0,
-        Constants.backgroundColor217,
-        Constants.backgroundColor255,
+        Constants.backgroundColorRed,
+        Constants.backgroundColorGreen,
+        Constants.backgroundColorBlue,
+        Constants.backgroundColorOpacity,
       ),
       body: GridView.count(
         crossAxisCount: Constants.bodyCrossAxisCount,
