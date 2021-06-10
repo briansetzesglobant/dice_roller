@@ -3,24 +3,24 @@ import 'constants.dart';
 
 abstract class TextStyles {
   static const TextStyle bottomNavigationBarText = TextStyle(
-    fontSize: Constants.textStyleFontSizeConst,
+    fontSize: Constants.textStyleFontSize,
     fontWeight: FontWeight.normal,
-    height: Constants.heightConst,
+    height: Constants.textStyleHeight,
   );
   static const TextStyle bottomNavigationBarScore = TextStyle(
-    fontSize: Constants.textStyleFontSizeConstSmall,
+    fontSize: Constants.textStyleFontSizeSmall,
     fontWeight: FontWeight.normal,
-    height: Constants.heightConst,
+    height: Constants.textStyleHeight,
   );
   static const TextStyle bottomNavigationBarValue = TextStyle(
     color: Color.fromRGBO(
-      Constants.TextStyleRed,
-      Constants.TextStyleGreen,
-      Constants.TextStyleBlue,
-      Constants.TextStyleOpacity,
+      Constants.textStyleRed,
+      Constants.textStyleGreen,
+      Constants.textStyleBlue,
+      Constants.textStyleOpacity,
     ),
     fontSize: Constants.textStyleWithColorFontSize,
     fontWeight: FontWeight.normal,
-    height: Constants.heightConst,
+    height: Constants.textStyleHeight,
   );
 }

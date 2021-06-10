@@ -11,12 +11,12 @@ abstract class Constants {
   static const double bodyBorderRadius = 25.0;
   static const double bottomNavigationBarChildren = 25.0;
 
-  static const double textStyleFontSizeConst = 28.0;
-  static const double heightConst = 2.0;
-  static const double textStyleFontSizeConstSmall = 25.0;
+  static const double textStyleFontSize = 28.0;
+  static const double textStyleHeight = 2.0;
+  static const double textStyleFontSizeSmall = 25.0;
   static const double textStyleWithColorFontSize = 25.0;
-  static const int TextStyleRed = 189;
-  static const int TextStyleGreen = 56;
-  static const int TextStyleBlue = 27;
-  static const double TextStyleOpacity = 2.0;
+  static const int textStyleRed = 189;
+  static const int textStyleGreen = 56;
+  static const int textStyleBlue = 27;
+  static const double textStyleOpacity = 2.0;
 }
