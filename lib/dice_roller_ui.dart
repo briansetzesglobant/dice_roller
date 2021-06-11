@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'utils/constants.dart';
 import 'utils/text_styles.dart';
+import 'src/bloc/i_dice_bloc.dart';
 
 class DiceRollerUI extends StatefulWidget {
+  final String title;
+
+  final IDiceBloc bloc;
+
   DiceRollerUI({
     Key key,
     this.title,
+    this.bloc,
   }) : super(key: key);
-
-  final String title;
 
   @override
   _DiceRollerUIState createState() => _DiceRollerUIState();
@@ -29,31 +33,41 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
         Constants.backgroundColorBlue,
         Constants.backgroundColorOpacity,
       ),
-      body: GridView.count(
-        crossAxisCount: Constants.bodyCrossAxisCount,
-        padding: EdgeInsets.all(
-          Constants.bodyPadding,
-        ),
-        mainAxisSpacing: Constants.bodyMainAxisSpacing,
-        crossAxisSpacing: Constants.bodyCrossAxisSpacing,
-        children: List.generate(
-          Constants.bodyChildren,
-          (int index) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  Constants.bodyBorderRadius,
-                ),
-              ),
-              child: Image(
-                image: AssetImage(
-                  'assets/images/dice${index + 1}.jpg',
-                ),
-                fit: BoxFit.fill,
-              ),
-            );
-          },
-        ),
+      body: StreamBuilder(
+        initialData: Constants.bodyList,
+        stream: widget.bloc.numbersStream,
+        builder: (context, snapshot) {
+          return GridView.count(
+            crossAxisCount: Constants.bodyCrossAxisCount,
+            padding: EdgeInsets.all(
+              Constants.bodyPadding,
+            ),
+            mainAxisSpacing: Constants.bodyMainAxisSpacing,
+            crossAxisSpacing: Constants.bodyCrossAxisSpacing,
+            children: snapshot.data.map<Widget>(
+              (index) {
+                return InkWell(
+                  onTap: () {
+                    widget.bloc.diceRoll();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        Constants.bodyBorderRadius,
+                      ),
+                    ),
+                    child: Image(
+                      image: AssetImage(
+                        'assets/images/dice$index.jpg',
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                );
+              },
+            ).toList(),
+          );
+        },
       ),
       bottomNavigationBar: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,9 +83,15 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
             'Score: ',
             style: TextStyles.bottomNavigationBarScore,
           ),
-          Text(
-            '21',
-            style: TextStyles.bottomNavigationBarValue,
+          StreamBuilder(
+            initialData: Constants.body,
+            stream: widget.bloc.scoreStream,
+            builder: (context, snapshot) {
+              return Text(
+                snapshot.data,
+                style: TextStyles.bottomNavigationBarValue,
+              );
+            },
           ),
         ],
       ),
