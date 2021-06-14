@@ -20,7 +20,7 @@ abstract class Constants {
   static const int textStyleBlue = 27;
   static const double textStyleOpacity = 2.0;
 
-  static const List<int> bodyList = [1, 2, 3, 4, 5, 6];
-  static const String body = "6";
+  static const List<int> bodyDiceInitial = [1, 2, 3, 4, 5, 6];
+  static const String bodyScoreInitial = "21";
   static const int diceRollValue = 6;
 }

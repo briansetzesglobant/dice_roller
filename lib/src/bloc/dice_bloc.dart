@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:math';
-import 'package:dice_roller/utils/constants.dart';
+
+import '../../utils/constants.dart';
+
 import 'i_dice_bloc.dart';
 
 class DiceBloc extends IDiceBloc {
@@ -30,16 +32,16 @@ class DiceBloc extends IDiceBloc {
   @override
   void diceRoll() {
     _values.clear();
-    int sumOfTheScore = 0;
-    int diceValue = 0;
-    int i = 0;
-    while (i < Constants.diceRollValue) {
-      diceValue = Random().nextInt(Constants.diceRollValue) + 1;
-      _values.add(diceValue);
-      sumOfTheScore += diceValue;
-      i++;
+    int _sumOfTheScore = 0;
+    int _diceValue = 0;
+    int _i = 0;
+    while (_i < Constants.diceRollValue) {
+      _diceValue = Random().nextInt(Constants.diceRollValue) + 1;
+      _values.add(_diceValue);
+      _sumOfTheScore += _diceValue;
+      _i++;
     }
     this._numbersStreamController.sink.add(_values);
-    this._scoreStreamController.sink.add('$sumOfTheScore');
+    this._scoreStreamController.sink.add('$_sumOfTheScore');
   }
 }

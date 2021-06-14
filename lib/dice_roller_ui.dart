@@ -34,7 +34,7 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
         Constants.backgroundColorOpacity,
       ),
       body: StreamBuilder(
-        initialData: Constants.bodyList,
+        initialData: Constants.bodyDiceInitial,
         stream: widget.bloc.numbersStream,
         builder: (context, snapshot) {
           return GridView.count(
@@ -84,7 +84,7 @@ class _DiceRollerUIState extends State<DiceRollerUI> {
             style: TextStyles.bottomNavigationBarScore,
           ),
           StreamBuilder(
-            initialData: Constants.body,
+            initialData: Constants.bodyScoreInitial,
             stream: widget.bloc.scoreStream,
             builder: (context, snapshot) {
               return Text(
